@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>劭廷 · 自我介紹</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0d0d1a;
+      font-family: 'Inter', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      overflow: hidden;
+    }
+
+    /* ── Gradient background ── */
+    .bg {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 10%, rgba(247,151,30,0.28) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 70% at 90% 90%, rgba(160,68,255,0.35) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255,210,0,0.10) 0%, transparent 70%),
+        linear-gradient(160deg, #10091f 0%, #0d1128 50%, #15092a 100%);
+      z-index: 0;
+    }
+
+    /* ── Floating orbs ── */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(90px);
+      z-index: 0;
+      animation: drift linear infinite;
+    }
+
+    .orb-1 {
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(160,68,255,0.55), transparent 70%);
+      top: -140px; right: -140px;
+      animation-duration: 18s;
+    }
+    .orb-2 {
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, rgba(247,151,30,0.5), transparent 70%);
+      bottom: -100px; left: -100px;
+      animation-duration: 22s;
+      animation-direction: reverse;
+    }
+    .orb-3 {
+      width: 240px; height: 240px;
+      background: radial-gradient(circle, rgba(255,210,0,0.4), transparent 70%);
+      top: 55%; left: 20%;
+      animation-duration: 14s;
+    }
+
+    @keyframes drift {
+      0%   { transform: translate(0, 0) scale(1); }
+      33%  { transform: translate(20px, -24px) scale(1.06); }
+      66%  { transform: translate(-16px, 18px) scale(0.96); }
+      100% { transform: translate(0, 0) scale(1); }
+    }
+
+    /* ── Card ── */
+    .card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(32px) saturate(160%);
+      -webkit-backdrop-filter: blur(32px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 36px;
+      padding: 56px 60px 52px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.06) inset,
+        0 40px 80px rgba(0, 0, 0, 0.45),
+        0 8px 24px rgba(160, 68, 255, 0.18);
+      animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0)   scale(1); }
+    }
+
+    /* ── Avatar ── */
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffd200 0%, #f7971e 45%, #a044ff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      margin: 0 auto 24px;
+      box-shadow:
+        0 0 0 4px rgba(255,210,0,0.2),
+        0 12px 32px rgba(160, 68, 255, 0.45);
+    }
+
+    /* ── Name ── */
+    .name {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #ffffff 30%, #ffd200 70%, #f7971e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.08em;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+
+    /* ── Subtitle ── */
+    .subtitle {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, #ffd200, #a044ff);
+      border-radius: 2px;
+      margin: 0 auto 32px;
+      opacity: 0.8;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    /* ── Interest tags ── */
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: rgba(255, 255, 255, 0.88);
+      padding: 7px 18px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+      cursor: default;
+    }
+
+    .tag:hover {
+      background: rgba(255, 210, 0, 0.15);
+      border-color: rgba(255, 210, 0, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* ── Quote ── */
+    .quote {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.98rem;
+      line-height: 1.85;
+      font-style: italic;
+      padding: 18px 22px 18px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 3px solid;
+      border-image: linear-gradient(180deg, #ffd200, #a044ff) 1;
+      border-radius: 0 12px 12px 0;
+      text-align: left;
+      letter-spacing: 0.03em;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="card">
+    <div class="avatar">🎵</div>
+
+    <div class="name">劭廷</div>
+    <div class="subtitle">Self Introduction</div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">興趣愛好</div>
+    <div class="interests">
+      <span class="tag">🎵 音樂</span>
+      <span class="tag">🎸 演奏</span>
+      <span class="tag">🎧 聆聽</span>
+    </div>
+
+    <div class="section-label">關於我</div>
+    <div class="quote">
+      音樂是我與世界對話的語言，每一個音符都是我內心的一部分。
+    </div>
+  </div>
+</body>
+</html>
